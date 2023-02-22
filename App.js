@@ -9,7 +9,6 @@ import ProfileScreen from "./containers/ProfileScreen";
 import SignInScreen from "./containers/SignInScreen";
 import SignUpScreen from "./containers/SignUpScreen";
 import SettingsScreen from "./containers/SettingsScreen";
-import SplashScreen from "./containers/SplashScreen";
 import { Image, View } from "react-native";
 import RoomScreen from "./containers/RoomScreen";
 
