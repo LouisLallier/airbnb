@@ -140,7 +140,7 @@ export default function SignUpScreen({ setToken }) {
             navigation.navigate("SignIn");
           }}
         >
-          <Text>Create an account</Text>
+          <Text>Déja un compte ? Se Connecter.</Text>
         </TouchableOpacity>
       </View>
     </ScrollView>

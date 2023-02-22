@@ -10,6 +10,8 @@ import SignInScreen from "./containers/SignInScreen";
 import SignUpScreen from "./containers/SignUpScreen";
 import SettingsScreen from "./containers/SettingsScreen";
 import SplashScreen from "./containers/SplashScreen";
+import { Image, View } from "react-native";
+import RoomScreen from "./containers/RoomScreen";
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -25,7 +27,7 @@ export default function App() {
       await AsyncStorage.removeItem("userToken");
     }
 
-    setUserToken(token);
+    setUserToken(userToken);
   };
 
   useEffect(() => {
@@ -88,11 +90,24 @@ export default function App() {
                         name="Home"
                         options={{
                           title: "My App",
-                          headerStyle: { backgroundColor: "red" },
                           headerTitleStyle: { color: "white" },
+                          headerTitle: () => (
+                            <View>
+                              <Image
+                                style={{
+                                  width: 40,
+                                  height: 40,
+                                }}
+                                source={require("./assets/logo.png")}
+                              />
+                            </View>
+                          ),
                         }}
                       >
                         {() => <HomeScreen />}
+                      </Stack.Screen>
+                      <Stack.Screen name="Room">
+                        {() => <RoomScreen />}
                       </Stack.Screen>
 
                       <Stack.Screen
